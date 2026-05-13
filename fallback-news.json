@@ -1,0 +1,130 @@
+[
+  {
+    "title": "Existing Home Sales",
+    "country": "USD",
+    "date": "2026-05-11T10:00:00-04:00",
+    "impact": "Low",
+    "forecast": "4.05M",
+    "previous": "3.98M"
+  },
+  {
+    "title": "NFIB Small Business Index",
+    "country": "USD",
+    "date": "2026-05-12T06:00:00-04:00",
+    "impact": "Low",
+    "forecast": "96.0",
+    "previous": "95.8"
+  },
+  {
+    "title": "Core CPI m/m",
+    "country": "USD",
+    "date": "2026-05-12T08:30:00-04:00",
+    "impact": "High",
+    "forecast": "0.3%",
+    "previous": "0.2%"
+  },
+  {
+    "title": "CPI m/m",
+    "country": "USD",
+    "date": "2026-05-12T08:30:00-04:00",
+    "impact": "High",
+    "forecast": "0.6%",
+    "previous": "0.9%"
+  },
+  {
+    "title": "CPI y/y",
+    "country": "USD",
+    "date": "2026-05-12T08:30:00-04:00",
+    "impact": "High",
+    "forecast": "3.7%",
+    "previous": "3.3%"
+  },
+  {
+    "title": "Federal Budget Balance",
+    "country": "USD",
+    "date": "2026-05-12T14:00:00-04:00",
+    "impact": "Low",
+    "forecast": "37.5B",
+    "previous": "-164.1B"
+  },
+  {
+    "title": "Core PPI m/m",
+    "country": "USD",
+    "date": "2026-05-13T08:30:00-04:00",
+    "impact": "High",
+    "forecast": "0.3%",
+    "previous": "0.1%"
+  },
+  {
+    "title": "PPI m/m",
+    "country": "USD",
+    "date": "2026-05-13T08:30:00-04:00",
+    "impact": "High",
+    "forecast": "0.5%",
+    "previous": "0.5%"
+  },
+  {
+    "title": "Core Retail Sales m/m",
+    "country": "USD",
+    "date": "2026-05-14T08:30:00-04:00",
+    "impact": "High",
+    "forecast": "0.6%",
+    "previous": "1.9%"
+  },
+  {
+    "title": "Retail Sales m/m",
+    "country": "USD",
+    "date": "2026-05-14T08:30:00-04:00",
+    "impact": "High",
+    "forecast": "0.6%",
+    "previous": "1.7%"
+  },
+  {
+    "title": "Unemployment Claims",
+    "country": "USD",
+    "date": "2026-05-14T08:30:00-04:00",
+    "impact": "Medium",
+    "forecast": "206K",
+    "previous": "200K"
+  },
+  {
+    "title": "Import Prices m/m",
+    "country": "USD",
+    "date": "2026-05-14T08:30:00-04:00",
+    "impact": "Low",
+    "forecast": "1.0%",
+    "previous": "0.8%"
+  },
+  {
+    "title": "Business Inventories m/m",
+    "country": "USD",
+    "date": "2026-05-14T10:00:00-04:00",
+    "impact": "Low",
+    "forecast": "0.8%",
+    "previous": "0.4%"
+  },
+  {
+    "title": "Empire State Manufacturing Index",
+    "country": "USD",
+    "date": "2026-05-15T08:30:00-04:00",
+    "impact": "Low",
+    "forecast": "7.3",
+    "previous": "11.0"
+  },
+  {
+    "title": "Capacity Utilization Rate",
+    "country": "USD",
+    "date": "2026-05-15T09:15:00-04:00",
+    "impact": "Low",
+    "forecast": "75.8%",
+    "previous": "75.7%"
+  },
+  {
+    "title": "Industrial Production m/m",
+    "country": "USD",
+    "date": "2026-05-15T09:15:00-04:00",
+    "impact": "Low",
+    "forecast": "0.2%",
+    "previous": "-0.5%"
+  }
+]

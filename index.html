@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>USD IMPACT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <h1>USD IMPACT</h1>
+        </div>
+        <div class="top-actions">
+          <div class="time-toggle" aria-label="Time format">
+            <button id="time12" class="time-button" type="button">12h</button>
+            <button id="time24" class="time-button" type="button">24h</button>
+          </div>
+          <button id="themeToggle" class="theme-button" type="button" aria-label="Switch theme">
+            <span data-lucide="sun"></span>
+            Light
+          </button>
+          <button id="refreshNews" class="refresh-button" type="button">
+            <span data-lucide="refresh-cw"></span>
+            Refresh
+          </button>
+          <p id="feedStatus" class="feed-status">Loading news...</p>
+        </div>
+      </header>
+
+      <section class="summary">
+        <div>
+          <p class="eyebrow">USD bias</p>
+          <h2 id="headline">Checking news impact</h2>
+        </div>
+        <div class="bias-box">
+          <span id="biasLabel">Waiting</span>
+          <div id="usdMeter" class="meter" aria-label="USD bias meter">
+            <span></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="cards" aria-live="polite">
+        <article class="impact-card gold">
+          <div class="card-top">
+            <span class="pair"><img class="asset-logo" src="https://s3-symbol-logo.tradingview.com/metal/gold.svg" alt="" /> XAUUSD</span>
+            <span id="xauSignal" class="signal neutral">Neutral</span>
+          </div>
+          <strong id="xauMove">Waiting for USD bias</strong>
+          <div class="price-widget" id="xauWidget" aria-label="Live XAUUSD price from TradingView"></div>
+          <p id="xauReason">Gold usually reacts strongly when USD data changes rate and yield expectations.</p>
+        </article>
+
+        <article class="impact-card crypto">
+          <div class="card-top">
+            <span class="pair"><img class="asset-logo" src="https://s3-symbol-logo.tradingview.com/crypto/XTVCBTC.svg" alt="" /> BTCUSD</span>
+            <span id="btcSignal" class="signal neutral">Neutral</span>
+          </div>
+          <strong id="btcMove">Waiting for USD bias</strong>
+          <div class="price-widget" id="btcWidget" aria-label="Live BTCUSD price from TradingView"></div>
+          <p id="btcReason">Bitcoin often reacts through liquidity, risk appetite, and dollar strength.</p>
+        </article>
+      </section>
+
+      <section class="content-switcher" aria-label="Choose market feed">
+        <button id="showNews" class="view-button active" type="button">
+          <span data-lucide="calendar-days"></span>
+          News
+        </button>
+        <button id="showTweets" class="view-button" type="button">
+          <span data-lucide="messages-square"></span>
+          Tweets
+        </button>
+        <button id="showHeatmap" class="view-button" type="button">
+          <span data-lucide="flame"></span>
+          Heatmap
+        </button>
+      </section>
+
+      <section class="social-panel view-panel" data-view-panel="tweets">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Trump watch</p>
+            <h2>Truth Social & X</h2>
+          </div>
+          <button id="refreshSocial" class="theme-button" type="button">
+            <span data-lucide="radio"></span>
+            Refresh posts
+          </button>
+        </div>
+        <div class="social-grid">
+          <article class="social-column">
+            <div class="source-heading">
+              <div>
+                <span class="source-label">Truth Social</span>
+                <p id="truthStatus">Loading recent posts...</p>
+              </div>
+              <a href="https://truthsocial.com/@realDonaldTrump" target="_blank" rel="noreferrer">Open</a>
+            </div>
+            <div id="truthList" class="truth-list"></div>
+          </article>
+
+          <article class="social-column">
+            <div class="source-heading">
+              <div>
+                <span class="source-label">X</span>
+                <p>Official timeline embed from @realDonaldTrump.</p>
+              </div>
+              <a href="https://x.com/realDonaldTrump" target="_blank" rel="noreferrer">Open</a>
+            </div>
+            <div class="x-embed">
+              <p id="xEmbedNotice" class="x-embed-notice">X controls this embed and may block it in local browsers.</p>
+              <div id="xBlockedCard" class="x-blocked-card">
+                <strong>X timeline unavailable</strong>
+                <p>X is blocking the embedded timeline in this local browser. The official profile link above still opens the live posts.</p>
+              </div>
+              <a
+                class="twitter-timeline"
+                data-height="430"
+                data-chrome="nofooter transparent"
+                href="https://twitter.com/realDonaldTrump"
+              >
+                Posts by @realDonaldTrump
+              </a>
+              <a class="x-fallback" href="https://x.com/realDonaldTrump" target="_blank" rel="noreferrer">
+                Open @realDonaldTrump on X
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="coinglass-panel view-panel" data-view-panel="heatmap">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Major liquidity zones</p>
+            <h2>BTCUSD & XAUUSD</h2>
+          </div>
+          <button id="refreshZones" class="theme-button" type="button">
+            <span data-lucide="radar"></span>
+            Refresh zones
+          </button>
+        </div>
+        <div class="coinglass-grid">
+          <article class="coinglass-frame-card">
+            <div class="source-heading">
+              <div>
+                <span class="source-label"><img class="asset-logo" src="https://s3-symbol-logo.tradingview.com/crypto/XTVCBTC.svg" alt="" /> BTCUSD</span>
+                <p id="btcZonesStatus">Loading BTC liquidity zones...</p>
+              </div>
+            </div>
+            <div id="btcZones" class="liquidity-map"></div>
+          </article>
+          <article class="coinglass-frame-card">
+            <div class="source-heading">
+              <div>
+                <span class="source-label"><img class="asset-logo" src="https://s3-symbol-logo.tradingview.com/metal/gold.svg" alt="" /> XAUUSD</span>
+                <p id="xauZonesStatus">Loading XAU liquidity zones...</p>
+              </div>
+            </div>
+            <div id="xauZones" class="liquidity-map"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="news-panel view-panel active" data-view-panel="news">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">High impact first</p>
+            <h2>Calendar</h2>
+          </div>
+          <div class="calendar-actions">
+            <div id="countdownAlert" class="countdown-alert">No news inside 1 hour</div>
+            <div class="folder-filter" aria-label="Impact folder filter">
+              <button class="folder-filter-button active all-folder" data-folder-filter="all" type="button">
+                <span data-lucide="folders"></span>
+                All
+              </button>
+              <button class="folder-filter-button high-folder" data-folder-filter="high" type="button">
+                <span data-lucide="folder"></span>
+                Red
+              </button>
+              <button class="folder-filter-button medium-folder" data-folder-filter="medium" type="button">
+                <span data-lucide="folder"></span>
+                Orange
+              </button>
+              <button class="folder-filter-button low-folder" data-folder-filter="low" type="button">
+                <span data-lucide="folder"></span>
+                Yellow
+              </button>
+            </div>
+            <div class="news-toggle" aria-label="Calendar view">
+              <button id="upcomingNews" class="news-toggle-button active" type="button">Upcoming</button>
+              <button id="pastNews" class="news-toggle-button" type="button">Past</button>
+            </div>
+            <span id="eventCount">0 events</span>
+          </div>
+        </div>
+        <div id="newsList" class="news-list"></div>
+      </section>
+
+      <p id="timezoneNote" class="timezone-note">Times shown in your local timezone.</p>
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
